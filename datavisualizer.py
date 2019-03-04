@@ -4,6 +4,8 @@ Created on Feb 24, 2019
 @author: ethanpoole
 '''
 # Ethan Poole
+
+# import packages and initialize
 import matplotlib.pyplot as plt
 import csv
 import numpy as np
@@ -13,7 +15,7 @@ all_segments = []
 num = 0;
 
 
-# import and read the csv file, splitting it up when it hits a break
+# import and read the csv file, starting a new list when it hits 'break' 
 with open('LOG00009.txt') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     
@@ -32,7 +34,9 @@ with open('LOG00009.txt') as csv_file:
 
 all_segments = np.array(all_segments)
 print all_segments
-# create plots for each of the figures
+
+
+# create plots for each of the appended data sets
 fig = plt.figure(1)
 plot_increment = 1
 list_a = []
@@ -65,17 +69,16 @@ x_values = range(1,plot_increment)
 print list_a
 plt.figure()
 plt.plot(x_values, list_a,'o-', color='green', linewidth=1,
-         label="Chanel A average")
-plt.title("Average chanel A")
-plt.xlabel('Incrament')
+         label="Channel A average")
+plt.title("Average channel")
+plt.xlabel('Increment')
 plt.ylabel('Channel Average')
 plt.legend(loc='upper left')
 print list_b
 plt.figure
 plt.plot(x_values, list_b,'o-', color='black', linewidth=1,
-         label="Chanel B average")
-plt.title("Average chanel b")
-plt.xlabel('Incrament')
+         label="Channel B average")
+plt.xlabel('Increment')
 plt.ylabel('Channel Average')
 plt.legend(loc='best')
 print plot_increment
