@@ -4,3 +4,7 @@ test clock:
 
 generate scatter:
 
+fit regression to scatter:
+
+data visualizer:
+
