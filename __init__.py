@@ -1,0 +1,28 @@
+#Write a python script to import the csv file and save each columns as a separate matrix 
+
+
+import csv
+import numpy as np
+
+with open('LOG.CSV') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    
+    hours = []
+    minutes = []
+    seconds = []
+    Araw = []
+    Braw = []
+    thermoster = []
+    BME_temp = []
+    BME_humidity = []
+    for line in csv_reader:
+        hours.append(line[0])
+        minutes.append(line[1])
+        seconds.append(line[2])
+        Araw.append(line[3])
+        Braw.append(line[4])
+        thermoster.append(line[5])
+        BME_temp.append(line[6])
+        BME_humidity.append(line[7])
+    print BME_humidity
+    
